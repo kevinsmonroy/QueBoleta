@@ -6,8 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ConfiguracionTest {
     @Test
     public void testGetTiempoReservaHoras() {
-        int horas = Configuracion.getTiempoReservaHoras();
-        // Verificamos que cargue las 24 horas definidas
+        Configuracion config = new Configuracion();
+
+        int horas = config.getTiempoReservaHoras();
+
         assertEquals(24, horas, "El tiempo de reserva debería ser 24 horas.");
     }
 }
