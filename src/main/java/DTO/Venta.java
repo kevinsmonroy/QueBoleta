@@ -1,10 +1,11 @@
 package DTO;
+import java.io.Serializable;
 
 import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class Venta {
+public class Venta implements java.io.Serializable {
     private String idVenta;
     private Usuario cliente;
     private Evento evento;

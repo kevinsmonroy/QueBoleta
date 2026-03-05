@@ -8,27 +8,37 @@ import java.time.LocalDateTime;
 public class GestionVenta {
 
     public String procesarReserva(Usuario cliente, Evento evento, String nombreZona, int cantidad) {
-        // Máximo 10 boletas
         if (cantidad > 10) {
             return "ERROR: No se permiten más de 10 boletas por cliente.";
         }
 
-        // Buscamos la zona en el evento
+        if (!nombreZona.equalsIgnoreCase("A") &&
+                !nombreZona.equalsIgnoreCase("B") &&
+                !nombreZona.equalsIgnoreCase("C")) {
+            return "ERROR: Zona inválida. Solo se permite reservar en A, B o C.";
+        }
+
         ZonaEvento zona = evento.getZonas().stream()
                 .filter(z -> z.getNombreZona().equalsIgnoreCase(nombreZona))
                 .findFirst().orElse(null);
 
-        if (zona == null || zona.getBoletasDisponibles() < cantidad) {
-            return "ERROR: No hay disponibilidad en la zona seleccionada.";
+        if (zona == null) {
+            return "ERROR: La zona " + nombreZona + " no existe en este evento.";
         }
 
-        // crea reserva por ahora en memoria
+        if (zona.getBoletasDisponibles() < cantidad) {
+            return "ERROR: No hay disponibilidad suficiente en la zona " + nombreZona + ".";
+        }
+
         Venta reserva = new Venta();
         reserva.setIdVenta(UUID.randomUUID().toString());
         reserva.setCliente(cliente);
         reserva.setEvento(evento);
         reserva.setEstado(EstadoVenta.RESERVADA);
-        reserva.setFechaHoraReserva(LocalDateTime.now()); // Para el RNF-01
+        reserva.setFechaHoraReserva(LocalDateTime.now());
+
+        reserva.setNombreZona(nombreZona);
+        reserva.setCantidadReservada(cantidad);
 
         zona.setBoletasDisponibles(zona.getBoletasDisponibles() - cantidad);
         DataStorage.VENTAS.add(reserva);
