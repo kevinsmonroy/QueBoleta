@@ -1,10 +1,10 @@
-package service;
+package com.queboleta.service;
 
-import entity.Payment;
-import entity.PaymentMethod;
-import entity.Sale;
-import entity.SaleStatus;
-import repository.SaleRepository;
+import com.queboleta.entity.Payment;
+import com.queboleta.entity.PaymentMethod;
+import com.queboleta.entity.Sale;
+import com.queboleta.entity.SaleStatus;
+import com.queboleta.repository.SaleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

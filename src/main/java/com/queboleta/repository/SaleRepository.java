@@ -1,6 +1,6 @@
-package repository;
+package com.queboleta.repository;
 
-import entity.Sale;
+import com.queboleta.entity.Sale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

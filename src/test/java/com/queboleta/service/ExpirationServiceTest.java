@@ -1,8 +1,8 @@
-package service;
+package com.queboleta.service;
 
-import entity.Sale;
-import entity.SaleStatus;
-import repository.SaleRepository;
+import com.queboleta.entity.Sale;
+import com.queboleta.entity.SaleStatus;
+import com.queboleta.repository.SaleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -10,7 +10,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;

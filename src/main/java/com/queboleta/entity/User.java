@@ -1,4 +1,4 @@
-package entity;
+package com.queboleta.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

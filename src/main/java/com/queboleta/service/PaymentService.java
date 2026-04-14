@@ -1,9 +1,9 @@
-package service;
+package com.queboleta.service;
 
-import entity.Payment;
-import entity.Sale;
-import entity.SaleStatus;
-import repository.SaleRepository;
+import com.queboleta.entity.Payment;
+import com.queboleta.entity.Sale;
+import com.queboleta.entity.SaleStatus;
+import com.queboleta.repository.SaleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

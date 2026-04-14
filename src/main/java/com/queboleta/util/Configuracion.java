@@ -1,9 +1,11 @@
-package util;
+package com.queboleta.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Configuracion {
     private Properties properties = new Properties();
 

@@ -1,7 +1,7 @@
-package service;
+package com.queboleta.service;
 
-import entity.*;
-import repository.SaleRepository;
+import com.queboleta.entity.*;
+import com.queboleta.repository.SaleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

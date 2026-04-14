@@ -1,9 +1,9 @@
-package service;
+package com.queboleta.service;
 
-import entity.Event;
-import entity.EventZone;
+import com.queboleta.entity.Event;
+import com.queboleta.entity.EventZone;
 import org.junit.jupiter.api.Test;
-import repository.EventRepository;
+import com.queboleta.repository.EventRepository;
 
 import java.util.List;
 
